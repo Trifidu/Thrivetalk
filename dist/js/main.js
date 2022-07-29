@@ -1,6 +1,43 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/blocks/modules/modal/modal.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/modules/modal/modal.js ***!
+  \*******************************************/
+/***/ (() => {
+
+var modalTrigger = document.querySelectorAll("[data-modal]"),
+    modal = document.querySelector(".modal");
+
+function openModal() {
+  modal.classList.add("show");
+  modal.classList.remove("hide");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  modal.classList.add("hide");
+  modal.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+modalTrigger.forEach(function (btn) {
+  btn.addEventListener("click", openModal);
+});
+modal.addEventListener("click", function (e) {
+  if (e.target === modal || e.target.getAttribute("data-close") == "") {
+    closeModal();
+  }
+});
+document.addEventListener("keydown", function (e) {
+  if (e.code === "Escape" && modal.classList.contains("show")) {
+    closeModal();
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/import/components.js":
 /*!*************************************!*\
   !*** ./src/js/import/components.js ***!
@@ -15,10 +52,13 @@
 /*!**********************************!*\
   !*** ./src/js/import/modules.js ***!
   \**********************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// import "%modules%/header/header";
-// import "%modules%/footer/footer";
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_modal_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/modal/modal */ "./src/blocks/modules/modal/modal.js");
+/* harmony import */ var _modules_modal_modal__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_modal_modal__WEBPACK_IMPORTED_MODULE_0__);
+ // import "%modules%/footer/footer";
 
 /***/ })
 
@@ -99,7 +139,6 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
-/* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_import_modules__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./import/components */ "./src/js/import/components.js");
 /* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_import_components__WEBPACK_IMPORTED_MODULE_1__);
 
