@@ -472,11 +472,17 @@ button:focus {
 }
 
 .promo__text {
+  display: none;
   max-width: 510px;
+  min-height: 200px;
   font-size: 24px;
   line-height: 42px;
   color: #22356f;
   margin-bottom: 30px;
+}
+
+.promo__text.active {
+  display: block;
 }
 
 .promo__buttons {

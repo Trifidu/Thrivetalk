@@ -38,6 +38,63 @@ document.addEventListener("keydown", function (e) {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/promo/promo.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/modules/promo/promo.js ***!
+  \*******************************************/
+/***/ (() => {
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var promoBtns = document.querySelectorAll(".promo__btn"),
+    promoText = document.querySelectorAll(".promo__text");
+promoBtns.forEach(function (element) {
+  element.addEventListener("click", function (e) {
+    promoBtns.forEach(function (element) {
+      element.classList.remove("promo__btn_active");
+    });
+    e.target.classList.add("promo__btn_active");
+  });
+});
+
+var TabList = /*#__PURE__*/function () {
+  function TabList(buttonsContainer, tabs) {
+    var _this = this;
+
+    _classCallCheck(this, TabList);
+
+    this.buttonsContainer = buttonsContainer;
+    this.tabs = tabs;
+    this.buttonsContainer.addEventListener("click", function (event) {
+      var index = event.target.closest(".promo__btn").dataset.value;
+
+      _this.openTab(index);
+    });
+  }
+
+  _createClass(TabList, [{
+    key: "openTab",
+    value: function openTab(index) {
+      this.tabs.querySelector(".active").classList.remove("active");
+      this.tabs.querySelector(".promo__text--".concat(index)).classList.add("active");
+    }
+  }]);
+
+  return TabList;
+}();
+
+document.addEventListener("DOMContentLoaded", function () {
+  var buttonsContainer = document.querySelector(".promo__buttons");
+  var tabs = document.querySelector(".promo__texts");
+  var tabList = new TabList(buttonsContainer, tabs);
+});
+
+/***/ }),
+
 /***/ "./src/js/import/components.js":
 /*!*************************************!*\
   !*** ./src/js/import/components.js ***!
@@ -58,7 +115,10 @@ document.addEventListener("keydown", function (e) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modal_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/modal/modal */ "./src/blocks/modules/modal/modal.js");
 /* harmony import */ var _modules_modal_modal__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_modal_modal__WEBPACK_IMPORTED_MODULE_0__);
- // import "%modules%/footer/footer";
+/* harmony import */ var _modules_promo_promo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/promo/promo */ "./src/blocks/modules/promo/promo.js");
+/* harmony import */ var _modules_promo_promo__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_promo_promo__WEBPACK_IMPORTED_MODULE_1__);
+
+
 
 /***/ })
 
