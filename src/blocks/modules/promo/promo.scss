@@ -1,3 +1,52 @@
 // background: url(../img/icons/promo/promo_bg1.png) no-repeat center right 10%,
 //     url(../img/icons/promo/promo_bg2.png) no-repeat top right 10%,
 //     linear-gradient(to right, #f4f9e2 80%, #fff 20%);
+
+.promo {
+  height: 85vh;
+  padding: 150px 0;
+  background: url(../img/icons/promo/promo_bg2.png) no-repeat center right,
+    url(../img/icons/promo/promo_bg1.png) no-repeat top right,
+    linear-gradient(to right, #f4f9e2 100%, #fff 0%);
+  &__body {
+    max-width: 684px;
+  }
+  &__title {
+    font-size: 48px;
+    line-height: 53px;
+    letter-spacing: -0.035em;
+    color: #22356f;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  &__text {
+    max-width: 510px;
+    font-size: 24px;
+    line-height: 42px;
+    color: #22356f;
+    margin-bottom: 30px;
+  }
+  &__buttons {
+    margin-right: 10px;
+    margin-bottom: 75px;
+  }
+  &__btn {
+    background: none;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.1em;
+    color: #f9b640;
+    padding: 10px 30px;
+    border: 1px solid #f4f9e2;
+    transition: all 0.5s ease 0s;
+    &_active {
+      color: #ffffff;
+      background-color: #f9b640;
+      border: 1px solid #f9b640;
+    }
+    &:hover {
+      border: 1px solid #f9b640;
+      cursor: pointer;
+    }
+  }
+}

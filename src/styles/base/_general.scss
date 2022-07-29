@@ -22,4 +22,8 @@
 
 button {
   border: none;
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }
