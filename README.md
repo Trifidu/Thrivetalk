@@ -14,4 +14,4 @@
 
 ## Link
 
-[versel-Thrivetalk](https://thrivetalk-theta.vercel.app)
+[vercel-Thrivetalk](https://thrivetalk-theta.vercel.app)
